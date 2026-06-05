@@ -2,8 +2,6 @@ flask
 pandas
 numpy
 scikit-learn==1.6.1
-<<<<<<< HEAD
 gunicorn
-=======
-gunicorn
->>>>>>> 569f58aa2053fbd25db163fb213ba5ba3ab0d65c
+
+
