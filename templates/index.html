@@ -1,84 +1,52 @@
-<!DOCTYPE html>
-<html>
-
-
-<head>
+<!DOCTYPE html><html><head>
     <title>Titanic Survival Predictor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+</head><body><div class="container"><h1>🚢 Titanic Survival Predictor</h1>
+<h3>White Star Line Passenger Registry - 1912</h3>
 
-<body>
+<form method="POST">
 
-<div class="container">
+    <p>Passenger Class</p>
+    <select name="pclass">
+        <option value="1">First Class</option>
+        <option value="2">Second Class</option>
+        <option value="3">Third Class</option>
+    </select>
 
-    <h1>🚢 Titanic Survival Predictor</h1>
-    <h3>White Star Line Passenger Registry - 1912</h3>
+    <p>Gender</p>
+    <select name="sex">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
 
-    <form method="POST">
+    <p>Age</p>
+    <input type="number" name="age" required>
 
-        <p>Passenger Class</p>
-        <select name="pclass">
-            <option value="1">First Class</option>
-            <option value="2">Second Class</option>
-            <option value="3">Third Class</option>
-        </select>
+    <p>Siblings / Spouse</p>
+    <input type="number" name="sibsp" required>
 
-        <p>Gender</p>
-        <select name="sex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+    <p>Parents / Children</p>
+    <input type="number" name="parch" required>
 
-        <p>Age</p>
-        <input type="number" name="age" required>
+    <p>Fare</p>
+    <input type="number" step="0.01" name="fare" required>
 
-        <p>Siblings / Spouse</p>
-        <input type="number" name="sibsp" required>
+    <p>Embarked Port</p>
+    <select name="embarked">
+        <option value="S">Southampton</option>
+        <option value="C">Cherbourg</option>
+        <option value="Q">Queenstown</option>
+    </select>
 
-        <p>Parents / Children</p>
-        <input type="number" name="parch" required>
+    <button type="submit">Predict Survival</button>
 
-        <p>Fare</p>
-        <input type="number" step="0.01" name="fare" required>
+</form>
 
-        <p>Embarked Port</p>
-        <select name="embarked">
-            <option value="S">Southampton</option>
-            <option value="C">Cherbourg</option>
-            <option value="Q">Queenstown</option>
-        </select>
-
-        <button type="submit">Predict Survival</button>
-
-    </form>
-
-    {% if prediction %}
-    <div class="result">
-        {{ prediction }}
-    </div>
-    {% endif %}
-
+{% if prediction %}
+<div class="result">
+    {{ prediction }}
 </div>
+{% endif %}
 
-</body>
-</html>
-
-<head>
-    <title>Titanic Prediction</title>
-</head>
-<body>
-    <h1>Titanic Prediction App</h1>
-
-    <form method="POST">
-        <input type="number" name="pclass" placeholder="Pclass"><br><br>
-        <input type="text" name="sex" placeholder="Sex"><br><br>
-        <input type="number" name="age" placeholder="Age"><br><br>
-        <input type="number" name="sibsp" placeholder="SibSp"><br><br>
-        <input type="number" name="parch" placeholder="Parch"><br><br>
-        <input type="number" step="0.01" name="fare" placeholder="Fare"><br><br>
-        <input type="text" name="embarked" placeholder="Embarked"><br><br>
-
-        <button type="submit">Predict</button>
-    </form>
-</body>
+</div></body>
 </html>
